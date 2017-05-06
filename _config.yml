@@ -37,7 +37,7 @@ disqus_shortname:   lavinci
   #ad-client:
   #ad-slot:
 #bing-verify:
-#email:
+email:				lavinci@yeah.net
 twitter:            lavinci_
 facebook:           van.lavinci
 github-url:         lavinci
@@ -55,7 +55,7 @@ instagram:          username
 #youtube:           username
 #youtube-channel:   channel
 #soundcloud:        username
-weibo:             username
+#weibo:             username
 #flickr:            username
 #codepen:           username
 #keybase:           username
