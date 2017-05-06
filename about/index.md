@@ -6,7 +6,7 @@ date: 2016-03-21
 comments: false
 ---
     
-<center><a href="http://www.lavinci.top"><b>Moon</b></a> is a minimal, one column jekyll theme.</center>
+<center><a href="http://www.lavinci.top"><b>Lavinci</b></a>Dream whispering colouR</center>
 
 ## Features
 * Minimal, you can focus on your content
