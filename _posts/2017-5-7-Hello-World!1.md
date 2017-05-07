@@ -1,12 +1,10 @@
 ---
 layout: post
-title:  "A Post with a Video"
+title:  "Helloworld1"
 date:   2016-03-15
-excerpt: "Custom written post descriptions are the way to go... if you're not lazy."
+excerpt: "demoooOOO"
 tag:
-- sample
-- post
-- video
+- algo
 comments: true
 ---
 
