@@ -1,11 +1,9 @@
 ---
-layout: post
-title:  "Helloworld1"
-date:   2016-03-15
-excerpt: "demoooOOO"
-tag:
-- algo
-comments: false
+title: Test 2
+data:2017-6-6
+excerpt: Hello Git Pages
+tags: can
+
 ---
 
 # hello
