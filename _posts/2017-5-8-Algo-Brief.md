@@ -3,8 +3,7 @@ layout: post
 title: "Algo Brief"
 excerpt: "Brief introduction of Algorithms"
 date: 2017-05-08 22:28:18 +08:00
-tags: 
--Algo
+tags: [Algo]
 ---
 # 综述:
 软件考研内容要求掌握的抽象能力分为数据结构和算法两部分,数据结构是栈（Stack）、队列（Queue）和向量（Vector）;算法则以树(tree),查找(search),排序(sort),图为主类.以下是具体分类:
