@@ -51,6 +51,7 @@ BST树定义,性质,ADT及其实现,BST树查找,插入,删除算法;
 
 想象我们手中有这样十个扑克,你会怎样对他们排序呢
 那么我们只要从第1最小,然后在后面找牌,找到比这个小的,我们就交换,然后继续,这样一轮下来,第一个牌一定是最小的了,我们在对第二个位置的牌这样下去,直到最后一个,我们就完成了排序,下面看代码,为了方便表示,我一般会写成函数体
+  
 ```c
 void sort(int *s,int size)		//传入数组的首地址,和大小
 {
@@ -60,22 +61,23 @@ void sort(int *s,int size)		//传入数组的首地址,和大小
 		swap(s[i],s[j]);			//交换
 }
 ```
-我们分析这段代码不难发现,我们每一此都进行了多遍不必要的交换,而这耗费了我们大量的时间(我们考虑上亿的牌(数),极端化),仔细想的话,其实我们只要在第i个后面找到一个最小的牌与之交换,就可以缩减时间,对吧?这就是选择排序
+我们分析这段代码不难发现,我们每一此都进行了多遍不必要的交换,而这耗费了我们大量的时间(我们考虑上亿的牌(数),极端化),仔细想的话,其实我们只要在第i个后面找到一个最小的牌与之交换,就可以缩减时间,对吧?这就是选择排序  
 
-	void sort(int *s,int size)
+```c
+void sort(int *s,int size)
+{
+	for(int i;i<=size-1;i++)
 	{
-		for(int i;i<=size-1;i++)
-		{
-			int min=s[i];				//假定第i个最小,记录下标为min
-			for(int j=i+1;j<=size-1;j++)
-			{	
-				if(s[j]<s[min])			
-				min=j;			//与后面比较,找到最小的那个并记录下标
-			}
-			swap(s[i],s[min]);		//将最小的与第i个交换
+		int min=s[i];				//假定第i个最小,记录下标为min
+		for(int j=i+1;j<=size-1;j++)
+		{	
+			if(s[j]<s[min])			
+			min=j;			//与后面比较,找到最小的那个并记录下标
 		}
-	}
-	
+		swap(s[i],s[min]);		//将最小的与第i个交换
+	}	
+}
+```	
 **有没有更好一点办法呢,我们抽牌时,是不是一种排序呢?我们抽到第一个牌,第二次抽到的牌与第一个比较,比他小我们放他前面,反之则放他后面,这样一直下去,也能完成排序.
 这个当作课后习题大家自己完成以下,下次文章里我会附上答案,请大家认真思考完成**
 
@@ -101,32 +103,32 @@ void sort(int *s,int size)		//传入数组的首地址,和大小
 * 1 2 3 4 5 6 7 8 9 
 
 ### 完成,下面贴下完整代码  
-
-	#include <iostream>
-	using namespace std;
-	void QuickSort(int *s,int a,int b)
-	{
-		if(a>b)	return;
-		int i=a,j=b;
-		while(i != j)
-		{	
-			while(s[j]>=s[a] && i<j) j--;
-			while(s[i]<=s[a] && i<j) i++;
-			if(i<j)
-			swap(s[i],s[j]);
-		}
-		swap(s[a],s[i]);	
-		QuickSort(s,a,i-1);
-		QuickSort(s,i+1,b);
-	}
-	int main()
+```c
+#include <iostream>
+using namespace std;
+void QuickSort(int *s,int a,int b)
+{
+	if(a>b)	return;
+	int i=a,j=b;
+	while(i != j)
 	{	
-		int NeedSort[9]={4,9,2,3,5,7,8,1,6};
-		QuickSort(NeedSort,0,8);
-		for(int i=0;i<9;i++)
-			cout<<NeedSort[i]<<" ";
-		cout<<endl;
-		return 0;
+		while(s[j]>=s[a] && i<j) j--;
+		while(s[i]<=s[a] && i<j) i++;
+		if(i<j)
+		swap(s[i],s[j]);
 	}
-
+	swap(s[a],s[i]);	
+	QuickSort(s,a,i-1);
+	QuickSort(s,i+1,b);
+}
+int main()
+{	
+	int NeedSort[9]={4,9,2,3,5,7,8,1,6};
+	QuickSort(NeedSort,0,8);
+	for(int i=0;i<9;i++)
+		cout<<NeedSort[i]<<" ";
+	cout<<endl;
+	return 0;
+}
+```
 
