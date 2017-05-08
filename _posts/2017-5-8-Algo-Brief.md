@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algo Brief
+title: "Algo Brief"
 excerpt: "Brief introduction of Algorithms"
 date: 2017-05-08 22:28:18 +08:00
 tags: 
