@@ -40,12 +40,12 @@ disqus_shortname:   lavinci
 #email:				lavinci@yeah.net
 twitter:            lavinci_
 facebook:           van.lavinci
-github-url:         lavinci
+#github-url:         lavinci
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 #linkedin:          username
 #xing:              username
 #instagram:          username
-#lastfm:            username
+lastfm:            lavinci_
 #tumblr:            username
 #medium:            '@username'
 #pinterest:         username
