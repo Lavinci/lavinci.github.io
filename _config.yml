@@ -39,8 +39,8 @@ disqus_shortname:   lavinci
   #ad-slot:
 #bing-verify:
 #email:				lavinci@yeah.net
-twitter:            lavinci_
-facebook:           van.lavinci
+#twitter:            lavinci_
+#facebook:           van.lavinci
 #github-url:         lavinci
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 #linkedin:          username
@@ -57,9 +57,9 @@ dribbble:          lavinci
 #youtube-channel:   channel
 #soundcloud:        username
 #weibo:             username
-#flickr:            username
-#codepen:           username
-#keybase:           username
+flickr:            lavinci1
+codepen:           lavinci
+keybase:           lavinci
 #xmpp:              username@server.com
 #hackernews:        username
 
