@@ -31,8 +31,8 @@ disqus_shortname:   lavinci
 
 # Social
 # if you don't have any of social below, comment the line.
-#google:
-  #plus:            #username
+google:
+  plus:            isuay
   #analytics:
   #verify:
   #ad-client:
@@ -52,14 +52,14 @@ lastfm:            lavinci_
 #pinterest:         username
 #foursquare:        username
 #steam:              username
-dribbble:          lavinci
+#dribbble:          lavinci
 #youtube:           username
 #youtube-channel:   channel
 #soundcloud:        username
 #weibo:             username
-flickr:            lavinci1
+flickr:            lavinci
 codepen:           lavinci
-keybase:           lavinci
+#keybase:           lavinci
 #xmpp:              username@server.com
 #hackernews:        username
 
