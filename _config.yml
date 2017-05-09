@@ -31,13 +31,13 @@ disqus_shortname:   lavinci
 
 # Social
 # if you don't have any of social below, comment the line.
-google:
+#google:
   #plus:            isuay
-  analytics:		isufay
+  #analytics:		isufay
   #verify:
   #ad-client:
   #ad-slot:
-#bing-verify:
+bing-verify:		sufay
 #email:				lavinci@yeah.net
 #twitter:            lavinci_
 #facebook:           van.lavinci
