@@ -30,10 +30,10 @@ Data = a[top--];	//岀栈:
 ```c++
 Class Stack
 {
-	Public:
+Public:
 	...
 	Void Push(int data);	//入栈函数,请根据上面引例实现
-	Int Pop();	//岀栈函数,请根据上面引例实现
+	int Pop();	//岀栈函数,请根据上面引例实现
 	...
 Private:
 	Int a[100];
