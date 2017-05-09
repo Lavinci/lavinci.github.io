@@ -37,7 +37,7 @@ disqus_shortname:   lavinci
   #verify:
   #ad-client:
   #ad-slot:
-bing-verify:		sufay
+#bing-verify:		sufay
 #email:				lavinci@yeah.net
 #twitter:            lavinci_
 #facebook:           van.lavinci
@@ -47,7 +47,7 @@ bing-verify:		sufay
 #xing:              username
 #instagram:          username
 lastfm:            lavinci_
-#tumblr:            username
+tumblr:            isufay
 #medium:            '@username'
 #pinterest:         username
 #foursquare:        username
