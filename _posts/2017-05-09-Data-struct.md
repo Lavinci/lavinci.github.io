@@ -30,13 +30,13 @@ Data = a[top--];	//岀栈:
 ```c++
 Class Stack
 {
-Public:
-...
-Void Push(int data);	//入栈函数,请根据上面引例实现
-Int Pop();	//岀栈函数,请根据上面引例实现
-...
+	Public:
+	...
+	Void Push(int data);	//入栈函数,请根据上面引例实现
+	Int Pop();	//岀栈函数,请根据上面引例实现
+	...
 Private:
-Int a[100];
+	Int a[100];
 };
 ```
 
@@ -84,8 +84,8 @@ Private:
 ```c
 typedef struct _LINK_NODE  
 {  
-    int data;  
-    struct _LINK_NODE* next;  
+	int data;  
+	struct _LINK_NODE* next;  
 }LINK_NODE;  
 ```
 
@@ -93,80 +93,82 @@ typedef struct _LINK_NODE
 ```c
 LINK_NODE* alloca_node(int value)  
 {  
-    LINK_NODE* pLinkNode = NULL;  
-    pLinkNode = (LINK_NODE*)malloc(sizeof(LINK_NODE));  
-      
-    pLinkNode->data = value;  
-    pLinkNode->next = NULL;  
-    return pLinkNode;  
+	LINK_NODE* pLinkNode = NULL;  
+	 pLinkNode = (LINK_NODE*)malloc(sizeof(LINK_NODE));     
+	 pLinkNode->data = value;  
+	 pLinkNode->next = NULL;  
+	return pLinkNode;  
 }  
 ```
 ### 删除链表
 ```c
 void delete_node(LINK_NODE** pNode)  
 {  
-    LINK_NODE** pNext;  
-    if(NULL == pNode || NULL == *pNode)  
-        return ;  
-          
-    pNext = &(*pNode)->next;  
-    free(*pNode);  
-    delete_node(pNext);   
+	LINK_NODE** pNext;  
+	 if(NULL == pNode || NULL == *pNode)  
+	 return ;  
+	pNext = &(*pNode)->next;  
+	free(*pNode);  
+	 delete_node(pNext);   
 }  
 ```
 ### 链表插入数据
 ```c
 STATUS _add_data(LINK_NODE** pNode, LINK_NODE* pDataNode)  
 {  
-    if(NULL == *pNode){  
-        *pNode = pDataNode;  
-        return TRUE;  
-    }  
-      
-    return _add_data(&(*pNode)->next, pDataNode);  
+	 if(NULL == *pNode)
+	 {  
+	 *pNode = pDataNode;  
+	 return TRUE;  
+	}      
+	return _add_data(&(*pNode)->next, pDataNode);  
 }  
   
 STATUS add_data(const LINK_NODE** pNode, int value)  
 {  
-    LINK_NODE* pDataNode;  
-    if(NULL == *pNode)  
-        return FALSE;  
+	LINK_NODE* pDataNode;  
+	 if(NULL == *pNode)  
+	 return FALSE;  
           
-    pDataNode = alloca_node(value);  
-    assert(NULL != pDataNode);  
-    return _add_data((LINK_NODE**)pNode, pDataNode);  
+	pDataNode = alloca_node(value);  
+	 assert(NULL != pDataNode);  
+	return _add_data((LINK_NODE**)pNode, pDataNode);  
 }  
 ```
 ### 删除数据
 ```c
 STATUS _delete_data(LINK_NODE** pNode, int value)  
 {  
-    LINK_NODE* pLinkNode;  
-    if(NULL == (*pNode)->next)  
-        return FALSE;  
+	LINK_NODE* pLinkNode;  
+	 if(NULL == (*pNode)->next)  
+	 return FALSE;  
       
-    pLinkNode = (*pNode)->next;  
-    if(value == pLinkNode->data){  
-        (*pNode)->next = pLinkNode->next;  
-        free(pLinkNode);  
-        return TRUE;  
-    }else{  
+	 pLinkNode = (*pNode)->next;  
+	 if(value == pLinkNode->data)
+	{  
+	(*pNode)->next = pLinkNode->next;  
+	 free(pLinkNode);  
+	 return TRUE;  
+	 }
+	 else
+	 {  
         return _delete_data(&(*pNode)->next, value);  
-    }  
+	}  
 }  
   
 STATUS delete_data(LINK_NODE** pNode, int value)  
 {  
-    LINK_NODE* pLinkNode;  
-    if(NULL == pNode || NULL == *pNode)  
-        return FALSE;  
+	 LINK_NODE* pLinkNode;  
+	if(NULL == pNode || NULL == *pNode)  
+	return FALSE;  
   
-    if(value == (*pNode)->data){  
-        pLinkNode = *pNode;  
-        *pNode = pLinkNode->next;  
-        free(pLinkNode);  
-        return TRUE;  
-    }         
+	 if(value == (*pNode)->data)
+	{  
+	 pLinkNode = *pNode;  
+	 *pNode = pLinkNode->next;  
+	 free(pLinkNode);  
+	return TRUE;  
+    	}         
       
     return _delete_data(pNode, value);  
 }  
@@ -175,22 +177,22 @@ STATUS delete_data(LINK_NODE** pNode, int value)
 ```c
 LINK_NODE* find_data(const LINK_NODE* pLinkNode, int value)  
 {  
-    if(NULL == pLinkNode)  
-        return NULL;  
+	 if(NULL == pLinkNode)  
+	return NULL;  
       
-    if(value == pLinkNode->data)  
-        return (LINK_NODE*)pLinkNode;  
+	 if(value == pLinkNode->data)  
+	 return (LINK_NODE*)pLinkNode;  
       
-    return find_data(pLinkNode->next, value);  
+	return find_data(pLinkNode->next, value);  
 }  
 ```
 ### 打印数据
 ```c
 void print_node(const LINK_NODE* pLinkNode)  
 {  
-    if(pLinkNode){  
-        printf("%d\n", pLinkNode->data);  
-        print_node(pLinkNode->next);  
+	if(pLinkNode){  
+	printf("%d\n", pLinkNode->data);  
+	 print_node(pLinkNode->next);  
     }  
 }  
 ```
@@ -198,9 +200,9 @@ void print_node(const LINK_NODE* pLinkNode)
 ```c
 int count_node(const LINK_NODE* pLinkNode)  
 {  
-    if(NULL == pLinkNode)  
-        return 0;  
+	if(NULL == pLinkNode)  
+	 return 0;  
           
-    return 1 + count_node(pLinkNode->next);  
+	 return 1 + count_node(pLinkNode->next);  
 }  
 ```
