@@ -3,7 +3,7 @@ layout: post
 turtle: "Tmux in linux"
 excerpt: "a software application that can be used to multiplex several virtual consoles"
 data: 2017-05-12
-tag: [tag]
+tag: [Linux]
 ---
 
 # tmux
@@ -12,9 +12,9 @@ tmux是一个优秀的终端复用软件，即使非正常掉线，也能保证�
 
 简单地说，tmux对于我主要有两个功能（这应该也是tmux的主要功能）:
 
-    split窗口。可以在一个terminal下打开多个终端，也可以对当前屏幕进行各种split，即可以 同时打开多个显示范围更小的终端。
+split窗口。可以在一个terminal下打开多个终端，也可以对当前屏幕进行各种split，即可以 同时打开多个显示范围更小的终端。
 
-    在使用SSH的环境下，避免网络不稳定，导致工作现场的丢失。想象以下场景， 你在执行一条命令的过程中，由于网络不稳定，SSH连接断开了。这个时候，你就不知道之前 的那条命令是否执行成功。如果此时你打开了很多文件，进入了较深层次的目录，由于网络 不稳定，SSH连接断开。重新连接以后，你又不得不重新打开那些文件，进入那个深层次的 目录。如果使用了tmux，重新连接以后，就可以直接回到原来的工作环境，不但提高了工作 效率，还降低了风险，增加了安全性。
+在使用SSH的环境下，避免网络不稳定，导致工作现场的丢失。想象以下场景， 你在执行一条命令的过程中，由于网络不稳定，SSH连接断开了。这个时候，你就不知道之前 的那条命令是否执行成功。如果此时你打开了很多文件，进入了较深层次的目录，由于网络 不稳定，SSH连接断开。重新连接以后，你又不得不重新打开那些文件，进入那个深层次的 目录。如果使用了tmux，重新连接以后，就可以直接回到原来的工作环境，不但提高了工作 效率，还降低了风险，增加了安全性。
 
 ## 安装
 
@@ -27,19 +27,15 @@ sudo apt-get install tmux
 根据tmux的定义，在开启了tmux服务器后，会首先创建一个会话，而这个会话则会首先创建一个窗口，其中仅包含一个面板；也就是说，这里看到的所谓终端控制台应该称作tmux的一个面板，虽然其使用方法与终端控制台完全相同。
 
 tmux使用C/S模型构建，主要包括以下单元模块：
-
-    server服务器。输入tmux命令时就开启了一个服务器。
-
-    session会话。一个服务器可以包含多个会话
-
-    window窗口。一个会话可以包含多个窗口。
-
-    pane面板。一个窗口可以包含多个面板。
+server服务器。输入tmux命令时就开启了一个服务器。
+session会话。一个服务器可以包含多个会话
+window窗口。一个会话可以包含多个窗口。
+pane面板。一个窗口可以包含多个面板。
 
 ## 初体验
 
 我们先来看一张效果图
-[Tumx1](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/linux/Tmux1.png)
+![Tumx1](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/linux/Tmux1.png)
 
 
 
@@ -111,11 +107,13 @@ source-file ~/.tmux.conf
 
 你也可以跟我一样，在配置文件中加入下面这句话，以后改了只需要按前缀+r了。
 
-## 将r 设置为加载配置文件，并显示"reloaded!"信息bind r source-file ~/.tmux.conf \; display "Reloaded!"
+## 将r 设置为加载配置文件，并显示"reloaded!"
+信息bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 关于前缀，很多人都喜欢改成Ctrl+a，不过我个人更喜欢Ctrl+x，如果你是vim用户，你一定懂的。还有就是面板的切换很不方便，需要先按前缀，再按方向键，还记得vim里面怎么切换各个面板的吗？tmux也可以，因为它支持映射。把前缀映射改成Ctrl+x，再加入如下几条语句，现在切换窗口就和vim一摸一样了，顿时觉得亲切了很多。
 
-## upbind-key k select-pane -U#downbind-key j select-pane -D#leftbind-key h select-pane -L#rightbind-key l select-pane -R
+## upbind-key k select-pane -U#downbind-key j select-paneD
+# leftbind-key h select-pane -L#rightbind-key l select-pane -R
 
 上面的最后一条语句会更改C-x l的功能，我挺喜欢这个功能的，因为我们很时候都是在两个窗口或这两个面板中切换，所以我又加入如下语句
 
