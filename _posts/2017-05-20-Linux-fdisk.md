@@ -10,7 +10,10 @@ tags: [Linux]
 Linux下的fdisk功能是极其强大的，用它可以划分出最复杂的分区，下面简要介绍一下它的用法：
 
 对于IDE硬盘，每块盘有一个设备名：
-对应于主板的四个IDE接口，设备名依次为：/dev/hda,/dev/hdb,/dev/hdc,/dev/hdd等,
+对应于主板的四个IDE接口，
+
+设备名依次为：/dev/hda,/dev/hdb,/dev/hdc,/dev/hdd等,
+
 如果还有IDE Raid卡，则依次为：/dev/hde,/dev/hdf,/dev/hdg,/dev/hdh。
 
 对于SCSI硬盘，则设备名依次为/dev/sda,/dev/sdb...等等
