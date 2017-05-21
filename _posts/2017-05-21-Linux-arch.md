@@ -19,12 +19,12 @@ tags: [Linux]
 >　最初针对i686，但是如今对x86_64也支持良好，而且还派生出了针对ARM平台的Arch Linux ARM以及针对HURD内核的Arch Hurd（发展缓慢）。
 >[http://baike.baidu.com/item/archlinux](http://baike.baidu.com/item/archlinux)
 
-来一发截图
+来一发截图(arch with xfce)
 ![https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/linux/ArchCut.png](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/linux/ArchCut.png)
 
 ## 教程
 本文参照(原文为英文版,这里就当时翻译了)
-[https://wiki.archlinux.org/index.php/Installation_guide](https://wiki.archlinux.org/index.php/Installation_guide)
+[Installation_guide](https://wiki.archlinux.org/index.php/Installation_guide)
 
 很多人认为安装arch是一件很困难的事情,这跟基础有一定关系,但是不大,按照引导,相信你也能做出来
 
@@ -40,7 +40,7 @@ ArchLinux或者是Linux的优点就不在这里多说了，我相信打开这篇
 
 如果是Linux系统下制作安装介质，推荐使用dd命令,可以参考我之前的这篇文章：
 
-[https://www.lavinci.top/Linux-dd/](https://www.lavinci.top/Linux-dd/)
+[Linux-dd/](https://www.lavinci.top/Linux-dd/)
 
 如果是windows系统下制作安装介质，推荐使用usbwriter这款轻量级的工具，下载链接：
 
@@ -52,7 +52,7 @@ https://sourceforge.net/projects/usbwriter/
 
 在linux下分出一块区域安装：使用fdisk进行，教程请见链接中的删除分区：
 
-[https://www.lavinci.top/Linux-fdisk/](https://www.lavinci.top/Linux-fdisk/)
+[Linux-fdisk/](https://www.lavinci.top/Linux-fdisk/)
 
 空闲的磁盘（新磁盘）：不需要进行任何操作。
 
