@@ -29,7 +29,7 @@ profession: Software engineering
 软件工程师还要...
 
 生命苦短
-我只要活得精彩,生的优秀
+我要活得精彩,活的优秀
 
 
 []()
