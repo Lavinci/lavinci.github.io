@@ -32,13 +32,4 @@ profession: Software engineering
 
 
 
-<<<<<<< HEAD
-生命苦短
-我要活得精彩,活的优秀
-=======
->>>>>>> 4dc8fb873bdae40d0ae3a4973ef7569769ee6f52
-
-
-
-
 
