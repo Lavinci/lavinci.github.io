@@ -3,7 +3,7 @@ layout: post
 title: "Regular Experssion"
 excerpt: "Memo"
 date: 2017-06-18 09:57
-tags: [Linux]
+tags: [Python]
 ---
 
 # 正则表达式的使用
