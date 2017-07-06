@@ -1,2 +1,2 @@
-alert("Hello!");
-console.info("\n m        mm   m    m mmmmm  mm   m   mmm  mmmmm\n #        ##   \"m  m\"   #    #\"m  # m\"   \"   #   \n #       #  #   #  #    #    # #m # #        #   \n #       #mm#   \"mm\"    #    #  # # #        #   \n #mmmmm #    #   ##   mm#mm  #   ##  \"mmm\" mm#mm \n");
+﻿console.info("\n m        mm   m    m mmmmm  mm   m   mmm  mmmmm\n #        ##   \"m  m\"   #    #\"m  # m\"   \"   #   \n #       #  #   #  #    #    # #m # #        #   \n #       #mm#   \"mm\"    #    #  # # #        #   \n #mmmmm #    #   ##   mm#mm  #   ##  \"mmm\" mm#mm \n");
+console.info("竟然被发现了!");
