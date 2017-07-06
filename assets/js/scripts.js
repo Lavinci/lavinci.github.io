@@ -1,4 +1,6 @@
 // dl-menu options
+alert("Hello!");
+console.info("\n m        mm   m    m mmmmm  mm   m   mmm  mmmmm\n #        ##   \"m  m\"   #    #\"m  # m\"   \"   #   \n #       #  #   #  #    #    # #m # #        #   \n #       #mm#   \"mm\"    #    #  # # #        #   \n #mmmmm #    #   ##   mm#mm  #   ##  \"mmm\" mm#mm \n");
 $(function() {
   $( '#dl-menu' ).dlmenu({
     animationClasses : { classin : 'dl-animate-in', classout : 'dl-animate-out' }
