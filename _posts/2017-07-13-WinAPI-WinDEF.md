@@ -3,7 +3,7 @@ layout: post
 title: "WinDef"
 excerpt: "系统编程的宏定义"
 date: 2017-07-13 14:42
-tags: [Windows]
+tags: [windows]
 ---
 
 ```c++
