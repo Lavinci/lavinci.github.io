@@ -7,6 +7,7 @@ tags: [windows]
 ---
 # Win 窗口的调用机制
 
+ ## 简单窗口创建
  直接上代码了,说明在注释里
  
 ```c++
@@ -160,4 +161,39 @@ LRESULT CALLBACK MainWndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPar
 	// 将我们不处理的消息交给系统做默认处理
 	return ::DefWindowProc(hwnd, message, wParam, lParam);
 }
+```
+## GDI
+改写记事本界面
+```c++
+// Oth.cpp : Defines the entry point for the application.
+//
+
+#include "stdafx.h"
+
+int APIENTRY WinMain(HINSTANCE hInstance,
+                     HINSTANCE hPrevInstance,
+                     LPSTR     lpCmdLine,
+                     int       nCmdShow)
+{
+ 	HDC hdc;
+	HWND hWnd;
+	char sz[]="大家好!";
+
+	hWnd = ::FindWindow("Notepad",NULL);
+
+	while(::IsWindow(hWnd))
+	{
+		hdc=::GetDC(hWnd);
+		::SetTextColor(hdc,RGB(255,0,0));
+		::SetBkColor(hdc,RGB(0,0,255));
+		::TextOut(hdc,100,100,sz,strlen(sz));
+		::ReleaseDC(hWnd,NULL);
+		::Sleep(1000);
+	}
+	::MessageBox(NULL,"退出","Test",MB_OK);
+
+
+	return 0;
+}
+
 ```
