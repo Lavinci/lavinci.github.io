@@ -1,5 +1,5 @@
 ---
-layouts; post
+layouts: post
 title: "基于前面的一个实例"
 excerpt: "Timer"
 date: 2017-07-18- 14:02
