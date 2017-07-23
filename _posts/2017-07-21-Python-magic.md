@@ -3,7 +3,7 @@ layout: post
 title: "magic"
 excerpt: "magic of python"
 date: 2017-07-21 19:29
-tag: [python]
+tag: [Python]
 ---
 
 ##  什么是魔法方法？
