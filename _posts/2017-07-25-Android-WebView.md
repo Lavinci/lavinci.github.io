@@ -29,23 +29,23 @@ Android和Js的交互
 
 ### WebView的状态
 
-//激活WebView为活跃状态，能正常执行网页的响应
+激活WebView为活跃状态，能正常执行网页的响应
 webView.onResume() ；
 
-//当页面被失去焦点被切换到后台不可见状态，需要执行onPause
+当页面被失去焦点被切换到后台不可见状态，需要执行onPause
 
-//通过onPause动作通知内核暂停所有的动作，比如DOM的解析、plugin的执行、JavaScript执行。
+通过onPause动作通知内核暂停所有的动作，比如DOM的解析、plugin的执行、JavaScript执行。
 webView.onPause()；
 
-//当应用程序(存在webview)被切换到后台时，这个方法不仅仅针对当前的webview而是全局的全应用程序的webview
+当应用程序(存在webview)被切换到后台时，这个方法不仅仅针对当前的webview而是全局的全应用程序的webview
 
-//它会暂停所有webview的layout，parsing，javascripttimer。降低CPU功耗。
+它会暂停所有webview的layout，parsing，javascripttimer。降低CPU功耗。
 webView.pauseTimers()
 
-//恢复pauseTimers状态
+恢复pauseTimers状态
 webView.resumeTimers()；
 
-//销毁Webview
+销毁Webview
 
 在关闭了Activity时，如果Webview的音乐或视频，还在播放。就必须销毁Webview,但是注意：webview调用destory时,webview仍绑定在Activity上
 这是由于自定义webview构建时传入了该Activity的context对象
@@ -56,19 +56,19 @@ webView.destroy();
 
 ### 关于前进 / 后退网页
 
-//是否可以后退
+是否可以后退
 Webview.canGoBack()
 
-//后退网页
+后退网页
 Webview.goBack()
 
-//是否可以前进
+是否可以前进
 Webview.canGoForward()
 
-//前进网页
+前进网页
 Webview.goForward()
 
-//以当前的index为起始点前进或者后退到历史记录中指定的steps
+以当前的index为起始点前进或者后退到历史记录中指定的steps
 如果steps为负数则为后退，正数则为前进
 
 Webview.goBackOrForward(intsteps)
@@ -91,15 +91,15 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 ### 清除缓存数据
 
-//清除网页访问留下的缓存
-//由于内核缓存是全局的因此这个方法不仅仅针对webview而是针对整个应用程序.
+清除网页访问留下的缓存
+由于内核缓存是全局的因此这个方法不仅仅针对webview而是针对整个应用程序.
 Webview.clearCache(true);
 
-//清除当前webview访问的历史记录
-//只会webview访问历史记录里的所有记录除了当前访问记录
+清除当前webview访问的历史记录
+只会webview访问历史记录里的所有记录除了当前访问记录
 Webview.clearHistory()；
 
-//这个api仅仅清除自动完成填充的表单数据，并不会清除WebView存储到本地的数据
+这个api仅仅清除自动完成填充的表单数据，并不会清除WebView存储到本地的数据
 Webview.clearFormData()；
 
 ## 常用类
@@ -205,7 +205,7 @@ webView.loadUrl("file:///android_asset/test.html");
 webView.loadUrl("content://com.android.htmlfileprovider/sdcard/test.html");
 
 步骤3. 复写shouldOverrideUrlLoading()方法，使得打开网页时不调用系统浏览器， 而是在本WebView中显示
-```Java
+```java
     webView.setWebViewClient(new WebViewClient(){
       @Override
       public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -218,7 +218,7 @@ webView.loadUrl("content://com.android.htmlfileprovider/sdcard/test.html");
 ## 常见方法3：onPageFinished()
 
 作用：在页面加载结束时调用。我们可以关闭loading 条，切换程序动作。
-```Java
+```java
     webView.setWebViewClient(new WebViewClient(){
       @Override
       public void onPageFinished(WebView view, String url) {
@@ -230,7 +230,7 @@ webView.loadUrl("content://com.android.htmlfileprovider/sdcard/test.html");
 ## 常见方法4：onLoadResource()
 
 作用：在加载页面资源时会调用，每一个资源（比如图片）的加载都会调用一次。
-```Java
+```java
     webView.setWebViewClient(new WebViewClient(){
       @Override
       public boolean onLoadResource(WebView view, String url) {
@@ -248,7 +248,7 @@ webView.loadUrl("content://com.android.htmlfileprovider/sdcard/test.html");
 
 步骤3：复写WebViewClient的onRecievedError方法
 该方法传回了错误码，根据错误类型可以进行不同的错误分类处理
-```Java
+```java
     webView.setWebViewClient(new WebViewClient(){
       @Override
       public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
@@ -267,7 +267,7 @@ switch(errorCode)
 
 作用：处理https请求
 webView默认是不处理https请求的，页面显示空白，需要进行如下设置：
-```Java
+```java
 webView.setWebViewClient(new WebViewClient() {
         @Override
         public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
@@ -285,13 +285,12 @@ webView.setWebViewClient(new WebViewClient() {
 常见方法1： onProgressChanged（）
 
 作用：获得网页的加载进度并显示
-```Java
+```java
 webview.setWebChromeClient(new WebChromeClient(){
-
       @Override
       public void onProgressChanged(WebView view, int newProgress) {
           if (newProgress < 100) {
-              String progress = newProgress + "%";
+           String progress = newProgress + "%";
               progress.setText(progress);
             } else {
         }
@@ -303,7 +302,7 @@ webview.setWebChromeClient(new WebChromeClient(){
 
 作用：获取Web页中的标题
  每个网页的页面都有一个标题，比如www.baidu.com这个页面的标题即“百度一下，你就知道”，那么如何知道当前webview正在加载的页面的title并进行设置呢？
- ```Java
+ ```java
 webview.setWebChromeClient(new WebChromeClient(){
 
     @Override
@@ -320,7 +319,7 @@ webview.setWebChromeClient(new WebChromeClient(){
 
 3.4.1 不在xml中定义 Webview ，而是在需要的时候在Activity中创建，并且Context使用 getApplicationgContext()
 
-```Java
+```java
 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         mWebView = new WebView(getApplicationContext());
         mWebView.setLayoutParams(params);
@@ -413,7 +412,7 @@ activity_main.xml
 
 步骤3：根据需要实现的功能从而使用相应的子类及其方法（注释很清楚了）
 
-```Java
+```java
 MainActivity.Java
 package com.example.carson_ho.webview_demo;
 
