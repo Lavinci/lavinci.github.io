@@ -9,5 +9,8 @@ comments: true
 
 https://github.com/Lavinci/PicOnNet/blob/master/article/oth/BadAppale.mp4
 
+static.hdslb.com/miniloader.swf?aid=12504518&page=1
 
-<iframe width="576" height="432" src="//www.bilibili.com/video/av16652" frameborder="0"> </iframe>
+<embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=12504518&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
+
+<iframe width="576" height="432" src="//static.hdslb.com/miniloader.swf?aid=12504518&page=1" frameborder="0"> </iframe>
