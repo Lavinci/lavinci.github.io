@@ -7,4 +7,6 @@ tags: [Hardware]
 comments: true
 ---
 
-<iframe height=498 width=510 src='http://player.youku.com/embed/XMjc4NTU5ODk0OA==' frameborder=0 ></iframe>
+<iframe width=510 height=498 src='http://player.youku.com/embed/XMjc4NTU5ODk0OA==' frameborder=0 > </iframe>
+---------
+<iframe width="560" height="315" src="//www.youtube.com/embed/SU3kYxJmWuQ" frameborder="0"> </iframe>
