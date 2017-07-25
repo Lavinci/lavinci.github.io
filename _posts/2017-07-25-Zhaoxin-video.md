@@ -8,4 +8,6 @@ comments: true
 ---
 
 
-<iframe width=510 height=498 src='//player.youku.com/embed/XMjc4NTU5ODk0OA==' frameborder="0" > </iframe>
+<iframe width="510" height="498" src='//player.youku.com/embed/XMjc4NTU5ODk0OA==' frameborder="0" ></iframe>
+
+<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=k0529kn9d6i&tiny=0&auto=0" allowfullscreen></iframe>
