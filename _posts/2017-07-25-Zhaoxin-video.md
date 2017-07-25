@@ -10,4 +10,4 @@ comments: true
 https://github.com/Lavinci/PicOnNet/blob/master/article/oth/BadAppale.mp4
 
 
-<iframe width="560" height="315" src="//github.com/Lavinci/PicOnNet/blob/master/article/oth/BadAppale.mp4" frameborder="0"> </iframe>
+<iframe width="576" height="432" src="//github.com/Lavinci/PicOnNet/blob/master/article/oth/BadAppale.mp4" frameborder="0"> </iframe>

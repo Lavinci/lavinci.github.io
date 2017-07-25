@@ -6,18 +6,18 @@ date: 2017-07-25 14:42
 tags: [Android]
 ---
 
-1. 简介
+## 简介
 
 WebView是一个基于webkit引擎、展现web页面的控件。
 
 android的Webview在低版本和高版本采用了不同的webkit版本内核，4.4后直接使用了Chrome。
-2. 作用
+## 作用
 
 显示和渲染Web页面
 直接使用html文件（网络上或本地assets中）作布局
 可和JavaScript交互调用
 WebView控件功能强大，除了具有一般View的属性和设置外，还可以对url请求、页面加载、渲染、页面交互进行强大的处理。
-3. 使用介绍
+## 使用介绍
 
 一般来说Webview可单独使用，可联合其子类一起使用，所以接下来，我会介绍：
 
@@ -25,9 +25,9 @@ Webview自身的常见方法；
 Webview的最常用的子类
 （WebSettings类、WebViewClient类、WebChromeClient类)
 Android和Js的交互
-3.1 Webview常用方法
+## Webview常用方法
 
-3.1.1 WebView的状态
+### WebView的状态
 
 //激活WebView为活跃状态，能正常执行网页的响应
 webView.onResume() ；
@@ -49,47 +49,8 @@ webView.resumeTimers()；
 //因此需要先从父容器中移除webview,然后再销毁webview:
 rootLayout.removeView(webView);
 webView.destroy();
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-3.1.2 关于前进 / 后退网页
+
+### 关于前进 / 后退网页
 
 //是否可以后退
 Webview.canGoBack()
@@ -104,33 +65,8 @@ Webview.goForward()
 //以当前的index为起始点前进或者后退到历史记录中指定的steps
 //如果steps为负数则为后退，正数则为前进
 Webview.goBackOrForward(intsteps)
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-常见用法：Back键控制网页后退
+
+### 常见用法：Back键控制网页后退
 
 问题：在不做任何处理前提下 ，浏览网页时点击系统的“Back”键,整个 Browser 会调用 finish()而结束自身
 目标：点击返回后，是网页回退而不是推出浏览器
@@ -142,21 +78,8 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
     }
     return super.onKeyDown(keyCode, event);
 }
-1
-2
-3
-4
-5
-6
-7
-1
-2
-3
-4
-5
-6
-7
-3.1.3 清除缓存数据
+
+### 清除缓存数据
 
 //清除网页访问留下的缓存
 //由于内核缓存是全局的因此这个方法不仅仅针对webview而是针对整个应用程序.
@@ -168,29 +91,10 @@ Webview.clearHistory()；
 
 //这个api仅仅清除自动完成填充的表单数据，并不会清除WebView存储到本地的数据
 Webview.clearFormData()；
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-3.2 常用类
 
-3.2.1 WebSettings类
+## 常用类
+
+### WebSettings类
 
 作用：对WebView进行配置和管理
 配置步骤 & 常见方法：
@@ -198,8 +102,7 @@ Webview.clearFormData()；
 
 这是前提！这是前提！这是前提！
 <uses-permission android:name="android.permission.INTERNET"/>
-1
-1
+
 配置步骤2：生成一个WebView组件（有两种方式）
 
 //方式1：直接在在Activity中生成
@@ -207,16 +110,7 @@ WebView webView = new WebView(this)
 
 //方法2：在Activity的layout文件里添加webview控件：
 WebView webview = (WebView) findViewById(R.id.webView1);
-1
-2
-3
-4
-5
-1
-2
-3
-4
-5
+
 配置步骤3：进行配置-利用WebSettings子类（常见方法）
 
 //声明WebSettings子类
@@ -243,55 +137,8 @@ webSettings.setAllowFileAccess(true); //设置可以访问文件
 webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口
 webSettings.setLoadsImagesAutomatically(true); //支持自动加载图片
 webSettings.setDefaultTextEncodingName("utf-8");//设置编码格式
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-常见用法：设置WebView缓存
+
+### 常见用法：设置WebView缓存
 
 当加载 html 页面时，WebView会在/data/data/包名目录下生成 database 与 cache 两个文件夹
 请求的 URL记录保存在 WebViewCache.db，而 URL的内容是保存在 WebViewCache 文件夹下
@@ -305,27 +152,7 @@ webSettings.setDefaultTextEncodingName("utf-8");//设置编码格式
         //LOAD_CACHE_ELSE_NETWORK，只要本地有，无论是否过期，或者no-cache，都使用缓存中的数据。
 
     //不使用缓存:
-    WebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+    WebView.getSettings().setCacheMode(WebSettings.LOAD_NO_C
 结合使用（离线加载）
 if (NetStatusUtil.isConnected(getApplicationContext())) {
     webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);//根据cache-control决定是否从网络上取数据。
@@ -339,33 +166,10 @@ webSettings.setAppCacheEnabled(true);//开启 Application Caches 功能
 
 String cacheDirPath = getFilesDir().getAbsolutePath() + APP_CACAHE_DIRNAME;
 webSettings.setAppCachePath(cacheDirPath); //设置  Application Caches 缓存目录
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
+
 注意： 每个 Application 只调用一次 WebSettings.setAppCachePath()，WebSettings.setAppCacheMaxSize()
 
-3.2.2 WebViewClient类
+### WebViewClient类
 
 作用：处理各种通知 & 请求事件
 常见方法：
@@ -393,72 +197,8 @@ Webview webview = (WebView) findViewById(R.id.webView1);
       return true;
       }
   });
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-常见方法2：onPageStarted()
 
-作用：开始载入页面调用的，我们可以设定一个loading的页面，告诉用户程序在等待网络响应。
- webView.setWebViewClient(new WebViewClient(){
-      @Override
-      public void  onPageStarted(WebView view, String url, Bitmap favicon) {
-         //设定加载开始的操作
-      }
-  });
-1
-2
-3
-4
-5
-6
-7
-1
-2
-3
-4
-5
-6
-7
-常见方法3：onPageFinished()
+##常见方法3：onPageFinished()
 
 作用：在页面加载结束时调用。我们可以关闭loading 条，切换程序动作。
     webView.setWebViewClient(new WebViewClient(){
@@ -467,19 +207,8 @@ Webview webview = (WebView) findViewById(R.id.webView1);
          //设定加载结束的操作
       }
   });
-1
-2
-3
-4
-5
-6
-1
-2
-3
-4
-5
-6
-常见方法4：onLoadResource()
+
+## 常见方法4：onLoadResource()
 
 作用：在加载页面资源时会调用，每一个资源（比如图片）的加载都会调用一次。
     webView.setWebViewClient(new WebViewClient(){
@@ -488,19 +217,8 @@ Webview webview = (WebView) findViewById(R.id.webView1);
          //设定加载资源的操作
       }
   });
-1
-2
-3
-4
-5
-6
-1
-2
-3
-4
-5
-6
-常见方法5：onReceivedError（）
+
+### 常见方法5：onReceivedError（）
 
 作用：加载页面的服务器出现错误时（如404）调用。
  App里面使用webview控件的时候遇到了诸如404这类的错误的时候，若也显示浏览器里面的那种错误提示页面就显得很丑陋了，那么这个时候我们的app就需要加载一个本地的错误提示页面，即webview如何加载一个本地的页面
@@ -520,39 +238,8 @@ switch(errorCode)
                 }
             }
         });
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-常见方法6：onReceivedSslError()
+
+## 常见方法6：onReceivedSslError()
 
 
 作用：处理https请求
@@ -565,23 +252,8 @@ webView.setWebViewClient(new WebViewClient() {
         // handler.handleMessage(null);    //可做其他处理
         }
     });
-1
-2
-3
-4
-5
-6
-7
-8
-1
-2
-3
-4
-5
-6
-7
-8
-3.2.3 WebChromeClient类
+
+## WebChromeClient类
 
 作用：辅助 WebView 处理 Javascript 的对话框,网站图标,网站标题等等。
 常见使用：
@@ -598,27 +270,8 @@ webview.setWebChromeClient(new WebChromeClient(){
             } else {
         }
     });
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-常见方法2： onReceivedTitle（）
+
+## 常见方法2： onReceivedTitle（）
 
 作用：获取Web页中的标题
  每个网页的页面都有一个标题，比如www.baidu.com这个页面的标题即“百度一下，你就知道”，那么如何知道当前webview正在加载的页面的title并进行设置呢？
@@ -628,19 +281,7 @@ webview.setWebChromeClient(new WebChromeClient(){
     public void onReceivedTitle(WebView view, String title) {
        titleview.setText(title)；
     }
-1
-2
-3
-4
-5
-6
-1
-2
-3
-4
-5
-6
-3.3 WebView与JS的交互
+##  WebView与JS的交互
 
 具体请看我写的文章 Android WebView与JS的交互方式 最全面汇总
 
@@ -652,15 +293,8 @@ LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.Layou
         mWebView = new WebView(getApplicationContext());
         mWebView.setLayoutParams(params);
         mLayout.addView(mWebView);
-1
-2
-3
-4
-1
-2
-3
-4
-3.4.2 在 Activity 销毁（ WebView ）的时候，先让 WebView 加载null内容，然后移除 WebView，再销毁 WebView，最后置空。
+
+## 在 Activity 销毁（ WebView ）的时候，先让 WebView 加载null内容，然后移除 WebView，再销毁 WebView，最后置空。
 
 @Override
     protected void onDestroy() {
@@ -674,31 +308,8 @@ LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.Layou
         }
         super.onDestroy();
     }
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-4. 实例
+
+## 实例
 
 目标：实现显示“www.baidu.com”、获取其标题、提示加载开始 & 结束和获取加载进度
 具体实现：
@@ -708,9 +319,9 @@ LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.Layou
 AndroidManifest.xml
 
 <uses-permission android:name="android.permission.INTERNET"/>
-1
-1
+
 步骤2：主布局
+```java
 activity_main.xml
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -765,113 +376,9 @@ activity_main.xml
         android:layout_height="fill_parent"
         android:layout_marginTop="10dp" />
 </RelativeLayout>
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
+```
 步骤3：根据需要实现的功能从而使用相应的子类及其方法（注释很清楚了）
+```Java
 MainActivity.Java
 
 package com.example.carson_ho.webview_demo;
@@ -989,3 +496,4 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 }
+```
