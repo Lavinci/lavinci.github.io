@@ -8,4 +8,4 @@ comments: true
 ---
 
 
-<iframe width=510 height=498 src='player.youku.com/embed/XMjc4NTU5ODk0OA==' frameborder="0" > </iframe>
+<iframe width=510 height=498 src='//player.youku.com/embed/XMjc4NTU5ODk0OA==' frameborder="0" > </iframe>
