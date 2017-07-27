@@ -12,7 +12,7 @@ comments: true
 
 ![BiSai1.JPG](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/BiSai1.JPG)
 
-![BiSai2.JPG](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/BiSai2.JPG)
+![BiSai2](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/BiSai2.jpg)
 
 比赛期间睡实验室
 ![BiSai3](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/BiSai3.jpg)
@@ -26,25 +26,25 @@ comments: true
 ## 作品
 
 DC-DC充电器
-[ZuoPin1](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin1.jpg)
+![ZuoPin1](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin1.jpg)
 
 充电台灯
-[ZuoPin2](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin2.jpg)
+![ZuoPin2](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin2.jpg)
 
 光立方
-[ZuoPin3](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin3.jpg)
+![ZuoPin3](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin3.jpg)
 
 逆变器
-[ZuoPin4](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin4.jpg)
+![ZuoPin4](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin4.jpg)
 
 无线充电
-[ZuoPin5](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin5.jpg)
+![ZuoPin5](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin5.jpg)
 
 寻迹小车
-[ZuoPin6](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin6.jpg)
+![ZuoPin6](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin6.jpg)
 
 
-[ZuoPin7](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin7.jpg)
+![ZuoPin7](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/ZuoPin7.jpg)
 
 
 
@@ -58,6 +58,6 @@ DC-DC充电器
 
 ![Jiang4](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/Jiang4.PNG)
 
-![jiang5](https://github.com/Lavinci/PicOnNet/blob/master/article/Hardware/shetuan/Jiang5.jpg)
+![jiang5](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/Jiang5.jpg)
 
 ![Jiang6](https://raw.githubusercontent.com/Lavinci/PicOnNet/master/article/Hardware/shetuan/Jiang6.jpg)
